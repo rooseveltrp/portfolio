@@ -1,0 +1,270 @@
+2014-07-04 00:48:35 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 14
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 00:48:46 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 14
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 00:48:47 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 14
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 00:59:47 Notice: Notice (8): Array to string conversion in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/Controller/CodeSamplesController.php, line 18]
+Trace:
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 18
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:03:31 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:26:20 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+ExceptionRenderer::_outputMessage() - CORE/Cake/Error/ExceptionRenderer.php, line 278
+ExceptionRenderer::error400() - CORE/Cake/Error/ExceptionRenderer.php, line 222
+ExceptionRenderer::render() - CORE/Cake/Error/ExceptionRenderer.php, line 176
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 120
+[main] - [internal], line ??
+
+2014-07-04 01:26:35 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+ExceptionRenderer::_outputMessage() - CORE/Cake/Error/ExceptionRenderer.php, line 278
+ExceptionRenderer::error400() - CORE/Cake/Error/ExceptionRenderer.php, line 222
+ExceptionRenderer::render() - CORE/Cake/Error/ExceptionRenderer.php, line 176
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 120
+[main] - [internal], line ??
+
+2014-07-04 01:26:39 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+ExceptionRenderer::_outputMessage() - CORE/Cake/Error/ExceptionRenderer.php, line 278
+ExceptionRenderer::error400() - CORE/Cake/Error/ExceptionRenderer.php, line 222
+ExceptionRenderer::render() - CORE/Cake/Error/ExceptionRenderer.php, line 176
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 120
+[main] - [internal], line ??
+
+2014-07-04 01:26:59 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+ExceptionRenderer::_outputMessage() - CORE/Cake/Error/ExceptionRenderer.php, line 278
+ExceptionRenderer::error400() - CORE/Cake/Error/ExceptionRenderer.php, line 222
+ExceptionRenderer::render() - CORE/Cake/Error/ExceptionRenderer.php, line 176
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 120
+[main] - [internal], line ??
+
+2014-07-04 01:27:04 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:27:12 Notice: Notice (8): Undefined variable: output in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/Model/CodeSample.php, line 84]
+Trace:
+CodeSample::cleanShellExecOutput() - APP/Model/CodeSample.php, line 84
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 12
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:27:21 Notice: Notice (8): Undefined variable: output in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/Model/CodeSample.php, line 84]
+Trace:
+CodeSample::cleanShellExecOutput() - APP/Model/CodeSample.php, line 84
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 12
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:27:38 Notice: Notice (8): Undefined variable: output in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/Model/CodeSample.php, line 84]
+Trace:
+CodeSample::cleanShellExecOutput() - APP/Model/CodeSample.php, line 84
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 12
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:27:42 Notice: Notice (8): Undefined variable: output in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/Model/CodeSample.php, line 84]
+Trace:
+CodeSample::cleanShellExecOutput() - APP/Model/CodeSample.php, line 84
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 12
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:27:54 Notice: Notice (8): Undefined variable: output in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/Model/CodeSample.php, line 84]
+Trace:
+CodeSample::cleanShellExecOutput() - APP/Model/CodeSample.php, line 84
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 12
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:45:41 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+ExceptionRenderer::_outputMessage() - CORE/Cake/Error/ExceptionRenderer.php, line 278
+ExceptionRenderer::error500() - CORE/Cake/Error/ExceptionRenderer.php, line 246
+ExceptionRenderer::render() - CORE/Cake/Error/ExceptionRenderer.php, line 176
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 120
+[main] - [internal], line ??
+
+2014-07-04 01:53:03 Notice: Notice (8): Indirect modification of overloaded property CodeSample::$Group has no effect in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/Model/CodeSample.php, line 107]
+Trace:
+CodeSample::resetAcls() - APP/Model/CodeSample.php, line 107
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 19
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:53:03 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+ExceptionRenderer::_outputMessage() - CORE/Cake/Error/ExceptionRenderer.php, line 278
+ExceptionRenderer::error500() - CORE/Cake/Error/ExceptionRenderer.php, line 246
+ExceptionRenderer::render() - CORE/Cake/Error/ExceptionRenderer.php, line 176
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 120
+call_user_func - [internal], line ??
+ErrorHandler::handleFatalError() - CORE/Cake/Error/ErrorHandler.php, line 255
+ErrorHandler::handleError() - CORE/Cake/Error/ErrorHandler.php, line 204
+call_user_func - [internal], line ??
+App::_checkFatalError() - CORE/Cake/Core/App.php, line 929
+App::shutdown() - CORE/Cake/Core/App.php, line 902
+[main] - [internal], line ??
+
+2014-07-04 01:53:15 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:53:22 Notice: Notice (8): Indirect modification of overloaded property CodeSample::$Group has no effect in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/Model/CodeSample.php, line 107]
+Trace:
+CodeSample::resetAcls() - APP/Model/CodeSample.php, line 107
+CodeSamplesController::resetSchema() - APP/Controller/CodeSamplesController.php, line 19
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-07-04 01:53:22 Notice: Notice (8): Undefined variable: title in [/Users/roosevelt/Sites/portfolio/demos/cakephp/app/View/Layouts/default.ctp, line 319]
+Trace:
+include - APP/View/Layouts/default.ctp, line 319
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::renderLayout() - CORE/Cake/View/View.php, line 542
+View::render() - CORE/Cake/View/View.php, line 479
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+ExceptionRenderer::_outputMessage() - CORE/Cake/Error/ExceptionRenderer.php, line 278
+ExceptionRenderer::error500() - CORE/Cake/Error/ExceptionRenderer.php, line 246
+ExceptionRenderer::render() - CORE/Cake/Error/ExceptionRenderer.php, line 176
+ErrorHandler::handleException() - CORE/Cake/Error/ErrorHandler.php, line 120
+call_user_func - [internal], line ??
+ErrorHandler::handleFatalError() - CORE/Cake/Error/ErrorHandler.php, line 255
+ErrorHandler::handleError() - CORE/Cake/Error/ErrorHandler.php, line 204
+call_user_func - [internal], line ??
+App::_checkFatalError() - CORE/Cake/Core/App.php, line 929
+App::shutdown() - CORE/Cake/Core/App.php, line 902
+[main] - [internal], line ??
+
