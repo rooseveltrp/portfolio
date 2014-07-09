@@ -17,7 +17,8 @@
     <link href="jumbotron.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -46,6 +47,7 @@
             </a>
         </div>
         <div class="navbar-collapse collapse">
+            <!--
             <form class="navbar-form navbar-right" role="form">
                 <div class="form-group">
                     <input type="text" placeholder="Email" class="form-control">
@@ -55,7 +57,9 @@
                 </div>
                 <button type="submit" class="btn btn-success">Sign in</button>
             </form>
-        </div><!--/.navbar-collapse -->
+            -->
+        </div>
+        <!--/.navbar-collapse -->
     </div>
 </div>
 
@@ -63,12 +67,16 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Welcome to my Portfolio!</h1>
+
         <p>
             Hi, in this page you will see couple of sample applications I created by utilizing
             different kinds of programming languages, technologies and even different Frameworks or Content Management
             Systems.
         </p>
-        <p><a class="btn btn-primary btn-lg" role="button">Download Resume &raquo;</a></p>
+
+        <p>
+            <a class="btn btn-primary btn-lg" role="button" href="./demos/cakephp">See CakePHP MVC Demo &raquo;</a>
+        </p>
     </div>
 </div>
 
@@ -77,30 +85,37 @@
     <div class="row">
         <div class="col-md-4">
             <h2>CakePHP</h2>
+
             <p>
                 CakePHP is one of the most earliest PHP Frameworks. So, if you are familiar with Codeigniter, Zend,
                 or Laravel then CakePHP will make you feel right at home. Other than CakePHP I have experience with
                 Laravel, Zend and Codeigniter!
             </p>
-            <p><a class="btn btn-default" href="#" role="button">View demo &raquo;</a></p>
+
+            <p><a class="btn btn-default" href="./demos/cakephp" role="button">View demo &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Ruby on Rails</h2>
+
             <p>
                 The Ruby Programming language is my favorite! Ruby on Rails is a MVC Framework that allows you to
                 build rapid applications. Click on the View demo button to see a Demo of a Ruby application running on
                 Ruby on Rails!
             </p>
-            <p><a class="btn btn-default" href="#" role="button">View demo &raquo;</a></p>
+
+            <p><a class="btn btn-default" href="#" role="button" disabled="disabled">Under development &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Django</h2>
+
             <p>
-                Although not my forte.... the Django Framework for Python is awesome! There is Ruby or PHP to choose from
+                Although not my forte.... the Django Framework for Python is awesome! There is Ruby or PHP to choose
+                from
                 but I still created a demo using the Django Framework to illustrate that I am not afraid of stretching
                 my mind with the latest technologies.
             </p>
-            <p><a class="btn btn-default" href="#" role="button">View demo &raquo;</a></p>
+
+            <p><a class="btn btn-default" href="#" role="button" disabled="disabled">Under development &raquo;</a></p>
         </div>
     </div>
 
@@ -109,7 +124,8 @@
     <footer>
         <p>&copy; Roosevelt Purification 2014</p>
     </footer>
-</div> <!-- /container -->
+</div>
+<!-- /container -->
 
 
 <!-- Bootstrap core JavaScript

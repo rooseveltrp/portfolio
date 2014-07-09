@@ -37,7 +37,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+    <a class="navbar-brand" href="<?php echo Router::url("/"); ?>">
+        Sample CakePHP Application
+        <small style="font-size: 12px;">
+            developed by Roosevelt Purification.
+        </small>
+    </a>
 </div>
 <!-- /.navbar-header -->
 

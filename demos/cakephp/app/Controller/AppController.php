@@ -32,10 +32,10 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
     /*
-     * todo Password protect admin routes
-     * todo Make sure only the admin can see the admin page
+     * done Password protect admin routes
+     * done Make sure only the admin can see the admin page
      * done Create an action to reset the schema
-     * todo Update the flash message template
+     * done Update the flash message template
      */
 
     public $components = array(
