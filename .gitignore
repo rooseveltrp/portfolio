@@ -1,4 +1,5 @@
 demos/cakephp/app/tmp/*
+demos/cakephp/app/Config/database.php
 !empty
 *.iml
 .idea
