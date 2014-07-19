@@ -11,17 +11,22 @@ class CodeSamplesController extends AppController {
 
     public function resetSchema() {
 
-        $this->loadModel("Group");
-
-        $cakeConsolePath = APP . "Console/cake";
-
-        $outputs = "";
-
-        $command = 'printf "y\ny\n" | ' . $cakeConsolePath . ' schema create';
-        $outputs .= $this->CodeSample->cleanShellExecOutput(shell_exec($command)) . "\n\n";
+        $this->loadModel("User");
+        
+        $schemaFileLocation = ROOT . DS . "portfolio.sql";
+        $schemaContents = file_get_contents($schemaFileLocation);
+        
+        // execute sql
+        $this->User->query($schemaContents);
 
         $this->set("title", "Resetting the database");
-        $this->set("output", $outputs);
+        $this->set("output", $schemaContents);
+        
+        $this->Session->setFlash("Database has been successfully reset!");
+        
+        // normally I would simply call shell_exec() and execute './Console/cake schema create'
+        // but my web hosting provider has the shell_exec() method disabled
+        // hence the need to improvise
     }
 
     public function tests() {

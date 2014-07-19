@@ -50,7 +50,7 @@ class AppController extends Controller {
                 "action" => "not_logged_in"
             ),
             "authorize" => array(
-                "controller"
+                "Controller"
             )
         )
     );
