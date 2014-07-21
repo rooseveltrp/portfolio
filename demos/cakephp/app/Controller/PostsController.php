@@ -23,8 +23,12 @@ class PostsController extends AppController {
  */
 	public function admin_index() {
 		$this->Post->recursive = 0;
-		$this->set('posts', $this->Paginator->paginate());
+        $records = $this->Paginator->paginate();
+		$this->set('posts', $records);
         $this->set("title", "Manage Posts");
+        if ($this->_isJson()) {
+            $this->_jsonResp(true, "", Set::classicExtract($records, "{n}.Post"));
+        }
 	}
 
 /**

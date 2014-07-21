@@ -68,4 +68,8 @@ class Post extends AppModel {
 			'order' => ''
 		)
 	);
+
+    public $virtualFields = array(
+        "author" => 'CONCAT(User.first_name, " ", User.last_name)'
+    );
 }

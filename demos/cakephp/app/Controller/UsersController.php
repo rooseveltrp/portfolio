@@ -28,16 +28,30 @@ class UsersController extends AppController {
     public function admin_login() {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                return $this->redirect($this->Auth->redirect());
+                if ($this->_isJson()) {
+                    $this->_jsonResp(true, "You have been successfully logged in", $this->Auth->user());
+                } else {
+                    return $this->redirect($this->Auth->redirect());
+                }
+            } else {
+                $msg = __('Your username or password was incorrect.');
+                if ($this->_isJson()) {
+                    $this->_jsonResp(false, $msg);
+                } else {
+                    $this->Session->setFlash($msg);
+                }
             }
-            $this->Session->setFlash(__('Your username or password was incorrect.'));
         }
         $this->set("title", "User Login");
     }
 
     public function admin_logout() {
         $this->Auth->logout();
-        return $this->redirect($this->Auth->redirect());
+        if ($this->_isJson()) {
+            $this->_jsonResp(true, "You have been successfully logged out!");
+        } else {
+            return $this->redirect($this->Auth->redirect());
+        }
     }
 
 /**
@@ -47,8 +61,12 @@ class UsersController extends AppController {
  */
 	public function admin_index() {
 		$this->User->recursive = 0;
-		$this->set('users', $this->Paginator->paginate());
+        $records = $this->Paginator->paginate();
+		$this->set('users', $records);
         $this->set("title", "Manage Users");
+        if ($this->_isJson()) {
+            $this->_jsonResp(true, "", Set::classicExtract($records, "{n}.User"));
+        }
 	}
 
 /**

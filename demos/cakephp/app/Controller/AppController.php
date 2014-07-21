@@ -52,7 +52,8 @@ class AppController extends Controller {
             "authorize" => array(
                 "Controller"
             )
-        )
+        ),
+        "RequestHandler"
     );
 
     public function beforeFilter() {
@@ -66,5 +67,19 @@ class AppController extends Controller {
         }
 
         return false;
+    }
+
+    public function _isJson() {
+        if (isset($this->request->params['ext']) && $this->request->params['ext'] == 'json') {
+            return true;
+        }
+        return false;
+    }
+
+    public function _jsonResp($success, $msg, $data = null) {
+        $this->set('success', $success);
+        $this->set('msg', $msg);
+        $this->set('data', $data);
+        $this->set("_serialize", array('success', 'msg', 'data'));
     }
 }

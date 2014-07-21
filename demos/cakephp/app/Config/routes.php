@@ -41,3 +41,7 @@
  * the built-in default routes.
  */
 	require CAKE . 'Config' . DS . 'routes.php';
+
+    // enable JSON for to deal with Dojo Toolkit or EXTJS
+
+    Router::parseExtensions('json');

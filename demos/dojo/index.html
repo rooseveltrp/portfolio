@@ -1,22 +1,390 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Dojo ToolKit Demo!</title>
     <link rel="stylesheet" href="dojo-release-1.10.0/dijit/themes/claro/claro.css">
-    <script src="dojo-release-1.10.0/dojo/dojo.js" data-dojo-config="async: true" type="text/javascript"></script>
-    <script type="text/javascript" language="JavaScript">
-        require([
-            'dojo/dom',
-            'dojo/dom-construct',
-            'dojo/domReady!'
-        ], function(dom, dc) {
-            elm = dom.byId("greeting");
-            dc.setText("Testing...", elm);
+    <link rel="stylesheet" href="dojo-release-1.10.0/dojox/grid/resources/Grid.css">
+    <link rel="stylesheet" href="dojo-release-1.10.0/dojox/grid/resources/claroGrid.css">
+
+    <link rel="stylesheet" type="text/css" href="../cakephp/css/shCore.css" />
+    <link rel="stylesheet" type="text/css" href="../cakephp/css/shCoreDefault.css" />
+    <link rel="stylesheet" type="text/css" href="../cakephp/css/shThemeRDark.css" />
+
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul {
+            padding: 0px;
+            border: 0px;
+            margin: 0px;
+        }
+
+        ul li {
+            list-style: none;
+            margin-bottom: 5px;
+            background-color: #d3d3d3;
+            padding: 5px;
+            border: 0px;
+        }
+    </style>
+
+    <script type="text/javascript" src="../cakephp/js/shCore.js"></script>
+    <script type="text/javascript" src="../cakephp/js/shBrushPhp.js"></script>
+
+    <script>dojoConfig = {parseOnLoad: true}</script>
+    <script src='dojo-release-1.10.0/dojo/dojo.js'></script>
+    <script>
+
+        function tabSwitcher(tabContentPaneId) {
+            tabs = dijit.byId("tabContainer");
+            desiredTab = dijit.byId(tabContentPaneId);
+            tabs.selectChild(desiredTab);
+        }
+
+        function showSource(index) {
+            // populate the source content panel
+            var url = "";
+            switch (index) {
+                case 0:
+                    url = "../cakephp/CodeSamples/getSource/Controller/Posts";
+                    break;
+            }
+
+            require(["dojo/_base/xhr", "dojo/dom"], function(xhr, dom) {
+                xhr.get({
+                    url: url,
+                }).then(function(data){
+                    // set the data
+                    var sourceCodesContentPanel = dom.byId("contentPaneSourceCodes");
+                    sourceCodesContentPanel.innerHTML = data;
+                    SyntaxHighlighter.highlight();
+                    tabSwitcher(dijit.byId("contentPaneSourceCodes"));
+                });
+            });
+        }
+
+        // toogle options based on the user's logged in status
+        require(["dojo/dom", "dojo/on", "dojo/Stateful", "dojo/_base/declare", "dojo/fx"], function(dom, on, Stateful, declare, fx){
+
+            // Subclass dojo/Stateful:
+            var MyClass = declare([Stateful], {
+                user: null,
+                _fooGetter: function(){
+                    return this.user;
+                },
+                _fooSetter: function(value){
+                    this.user = value;
+                }
+            });
+
+            // Create an instance and initialize some property values:
+            myObj = new MyClass({
+                user: null
+            });
+
+            // Watch changes on a property:
+            myObj.watch("user", function(name, oldValue, value){
+                // Do something based on the change
+                if (!value) {
+                    dojo.fx.chain([
+                        dojo.fadeOut({node: dom.byId("userLoggedIn"), duration: 300}).play(),
+                        dojo.style(dom.byId("userLoggedIn"), "display", "none"),
+                        dojo.style(dom.byId("loginForm"), "display", "block"),
+                        dojo.fadeIn({node: dom.byId("loginForm"), duration: 300}).play()
+                    ]).play();
+
+                    // empty the grids
+                    var defaultMsg = "<h1>You have been logged out!</h1>";
+                    dojo.byId("usersGrid").innerHTML = defaultMsg;
+                    dojo.byId("postsGrid").innerHTML = defaultMsg;
+
+                } else {
+                    // hide the login form
+                    dojo.fx.chain([
+                        dojo.fadeOut({node: dom.byId("loginForm"), duration: 300}).play(),
+                        dojo.style(dom.byId("loginForm"), "display", "none"),
+                        dojo.style(dom.byId("userLoggedIn"), "display", "block"),
+                        dojo.fadeIn({node: dom.byId("userLoggedIn"), duration: 300}).play()
+                    ]).play();
+
+                    // populate users grid
+                    require([
+                        "dojox/grid/DataGrid",
+                        "dojo/store/Memory",
+                        "dojo/data/ObjectStore",
+                        "dojo/_base/xhr",
+                        "dojo/domReady!"
+                    ], function(DataGrid, Memory, ObjectStore, xhr){
+                        var grid, dataStore;
+                        xhr.get({
+                            url: "../cakephp/admin/Users/index.json",
+                            handleAs: "json"
+                        }).then(function(data){
+
+                            if (dijit.byId("usersGrid")) {
+                                dijit.byId("usersGrid").destroyRecursive(true);
+                            }
+
+                            dataStore = new ObjectStore({ objectStore:new Memory({ data: data.data }) });
+
+                            grid = new DataGrid({
+                                store: dataStore,
+                                items: data.data,
+                                structure: [
+                                    { name: "First Name", field: "first_name", width: "25%" },
+                                    { name: "Last Name", field: "last_name", width: "25%" },
+                                    { name: "Email Address", field: "email_address", width: "25%" }
+                                ]
+                            }, "usersGrid");
+
+                            grid.startup();
+                        });
+                    });
+
+                    // populate the posts grid
+                    require([
+                        "dojox/grid/DataGrid",
+                        "dojo/store/Memory",
+                        "dojo/data/ObjectStore",
+                        "dojo/_base/xhr",
+                        "dojo/domReady!"
+                    ], function(DataGrid, Memory, ObjectStore, xhr){
+                        var grid, dataStore;
+                        xhr.get({
+                            url: "../cakephp/admin/Posts/index.json",
+                            handleAs: "json"
+                        }).then(function(data){
+
+                            if (dijit.byId("postsGrid")) {
+                                dijit.byId("postsGrid").destroyRecursive(true);
+                            }
+
+                            dataStore = new ObjectStore({ objectStore:new Memory({ data: data.data }) });
+
+                            grid = new DataGrid({
+                                store: dataStore,
+                                items: data.data,
+                                structure: [
+                                    { name: "Post ID", field: "id", width: "25%" },
+                                    { name: "Post Title", field: "title", width: "25%" },
+                                    { name: "Author", field: "author", width: "25%" }
+                                ]
+                            }, "postsGrid");
+                            grid.startup();
+                        });
+                    });
+
+                    on(dom.byId('logoutButton'), "click", function(evt){
+                        dojo.xhrGet({
+                            url: "../cakephp/admin/Users/logout.json",
+                            handleAs: "json",
+                            load: function(resp) {
+                                if (resp.success) {
+                                    myObj.set('user', null);
+                                }
+                            },
+                            error: function() {
+                                console.log('error...');
+                            }
+                        });
+                    });
+                }
+            });
         });
+
+        require([
+            "dojo/dom",
+            "dojo/on",
+            "dojo/parser",
+            "dijit/layout/BorderContainer",
+            "dijit/layout/TabContainer",
+            "dijit/layout/AccordionContainer",
+            "dijit/layout/ContentPane",
+            "dijit/layout/AccordionPane",
+            "dijit/Dialog",
+            "dojox/validate",
+            "dijit/form/Form",
+            "dijit/form/Button",
+            "dijit/form/ValidationTextBox"
+        ], function (dom) {
+
+
+        });
+
     </script>
 </head>
 <body class="claro">
-    <h1 id="greeting">Hello</h1>
+<div data-dojo-type="dijit/layout/BorderContainer" style="width: 100%; height: 100%;">
+    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+        <h2>
+            Sample Dojo Application
+        </h2>
+    </div>
+    <div style="width: 200px" data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="region:'leading'">
+        <div data-dojo-type="dijit/layout/AccordionPane" title="Administration">
+            <ul id="administrationMenu">
+                <li>
+                    <a href="javascript:void(null);" onclick="tabSwitcher('contentPaneManageUsers');">Manage Users</a>
+                </li>
+                <li>
+                    <a href="javascript:void(null);" onclick="tabSwitcher('contentPaneManagePosts');">Manage Posts</a>
+                </li>
+            </ul>
+        </div>
+        <div data-dojo-type="dijit/layout/AccordionPane" title="Code Samples">
+            <ul>
+                <li>
+                    <a href="javascript:void(null);" onclick="showSource(0)">/PostsController.php</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="tabContainer" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region:'center'">
+        <div id="contentPaneWelcome" data-dojo-type="dijit/layout/ContentPane" title="Welcome!">
+            <h1>
+                Hi,
+            </h1>
+            <p>
+                Thank you very much for taking a look at this sample Dojo Application!
+            </p>
+            <p>
+                The front-end has been developed completely using the Dojo Toolkit from
+                <a href="http://dojotoolkit.org/">http://dojotoolkit.org/</a> and the back-end is
+                powered by the CakePHP Framework.
+            </p>
+            <p>
+                Prior creating this application I had no experience with Dojo Toolkit but I managed
+                to pick it up in matter of few hours!
+            </p>
+        </div>
+        <div id="contentPaneManageUsers" data-dojo-type="dijit/layout/ContentPane" title="Manage Users">
+
+            <div id="usersGrid" class="grid">
+                <h1>
+                    You must be logged in!
+                </h1>
+            </div>
+
+        </div>
+        <div id="contentPaneManagePosts" data-dojo-type="dijit/layout/ContentPane" title="Manage Posts">
+
+            <div id="postsGrid" class="grid">
+                <h1>
+                    You must be logged in!
+                </h1>
+            </div>
+
+        </div>
+        <div id="contentPaneSourceCodes" data-dojo-type="dijit/layout/ContentPane" title="Source Codes">
+
+            <p>
+                Click on the "Code Samples" item on your left. And then click the file name!
+            </p>
+
+        </div>
+    </div>
+    <div id="rightContentPane" style="width: 250px" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'trailing'">
+
+        <p style="font-weight: bold">
+            User Account
+        </p>
+
+        <div id="userLoggedIn" style="display: none; opacity: 0">
+            <p style="font-weight: bold">
+                Welcome Back!
+            </p>
+            <p>
+                <button id="logoutButton" data-dojo-type="dijit/form/Button" type="button">Log-out</button>
+            </p>
+        </div>
+
+        <div data-dojo-type="dijit/form/Form" id="loginForm" data-dojo-id="loginForm"
+             encType="multipart/form-data">
+            <script type="dojo/method" event="onSubmit">
+                if(this.validate()) {
+                    dojo.xhrPost({
+                        // The URL of the request
+                        url: "../cakephp/admin/Users/login.json",
+                        handleAs: "json",
+                        form: dojo.byId("loginForm"),
+                        load: function(resp) {
+                            if (!resp.success) {
+                                require(["dijit/Dialog", "dojo/domReady!"], function(Dialog){
+                                    myDialog = new Dialog({
+                                        title: "Login Error!",
+                                        content: resp.msg,
+                                        style: "width: 300px"
+                                    });
+                                    myDialog.show();
+                                });
+                            } else {
+                                myObj.set('user', resp.data);
+                            }
+                        },
+                        // The error handler
+                        error: function() {
+                            console.log('error...');
+                        }
+                    });
+                    return false;
+                } else {
+                    return false;
+                }
+                return true;
+		    </script>
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="username">Username</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="data[User][username]" required="true" missingMessage="Username is Required" data-dojo-type="dijit/form/ValidationTextBox"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" name="data[User][password]" required="true" missingMessage="Password is Required" data-dojo-type="dijit/form/ValidationTextBox"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        <button data-dojo-type="dijit/form/Button" type="submit" name="submitButtonThree" value="Submit">Login</button>
+                        <button data-dojo-type="dijit/form/Button" type="reset">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <p style="font-weight: bold">
+            Sample Credentials
+        </p>
+
+        <p>
+            Username: admin
+        </p>
+        <p>
+            Password: 12345
+        </p>
+
+    </div>
+    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom'">
+        <p style="text-transform: uppercase; font-size: 10px; text-align: center">
+            Developed by Roosevelt Purification
+        </p>
+    </div>
+</div>
+
 </body>
 </html>
