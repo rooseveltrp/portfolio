@@ -22,7 +22,8 @@ class CodeSample extends AppModel {
             "Controller" => array(
                 "CodeSamples" => true,
                 "Posts" => true,
-                "Pages" => true
+                "Pages" => true,
+                "Users" => true
             ),
             "Model" => array(
                 "CodeSample" => true,

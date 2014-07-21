@@ -75,6 +75,12 @@ class CodeSamplesController extends AppController {
                     "Controller",
                     "Posts"
                 )),
+            "App\\Controller\\Users" => Router::url(array(
+                    "controller" => "CodeSamples",
+                    "action" => "getSource",
+                    "Controller",
+                    "Users"
+                )),
             "App\\Controller\\Pages" => Router::url(array(
                     "controller" => "CodeSamples",
                     "action" => "getSource",
